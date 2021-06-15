@@ -1,0 +1,23 @@
+.data	#Area para dados na memoria principal
+      
+        msg: .asciiz"Olá, mundo"  #Mensagem a ser exibida para o usuário - AULA 1
+        caractere: .byte 'A' #Caractere que vai ser impresso - AULA 2
+        idade: .word 18 #valor inteiro na memoria ram - AULA 3
+        
+.text   #Area para instruções do programa
+
+
+       li $v0,4 #Instrução para impressão de Strings ou char - AULA 1
+       la $a0 msg #LoadAdress está indicando o endereço que está a mensagem 
+       syscall #Imprime 
+       
+       li $v0,4 # AULA 2 
+       la $a0 caractere
+       syscall # Imprime o A
+       
+       li $v0,1 #Imprimir um INT 
+       lw $a0,idade #LoadWord para mover para a0
+       syscall #Imprime a idade
+       
+    
+    
